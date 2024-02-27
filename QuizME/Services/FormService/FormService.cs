@@ -6,12 +6,15 @@ namespace QuizME.Services.FormService
 {
 	public class FormService : IFormService
 	{
+		
 		private readonly IServiceProvider _serviceProvider;
 
 		public FormService(IServiceProvider serviceProvider)
 		{
 			_serviceProvider = serviceProvider;
 		}
+		public event FormOpenedHandler FormOpened;
+		public event FormClosedHandler FormClosed;
 
 		public void OpenForm<T>() where T : Form
 		{
@@ -22,6 +25,8 @@ namespace QuizME.Services.FormService
 		public void OpenFormWithArgument<T, TArg>(TArg arg) where T : Form
 		{
 			var form = ActivatorUtilities.CreateInstance<T>(_serviceProvider, arg);
+			form.Show();
+			FormOpened?.Invoke(this, EventArgs.Empty, form);
 		}
 
 		public string OpenFile()
@@ -30,10 +35,15 @@ namespace QuizME.Services.FormService
 			{
 				openFileDialog.Filter = "Quiz Files (*.quiz)|*.quiz";
 				openFileDialog.RestoreDirectory = true;
-				
-				if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+				var result = openFileDialog.ShowDialog();
+
+				switch (result)
 				{
-					return openFileDialog.FileName;
+					case DialogResult.OK:
+						return openFileDialog.FileName;
+					case DialogResult.Cancel:
+						return null;
 				}
 			}
 

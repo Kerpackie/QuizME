@@ -45,6 +45,7 @@ namespace QuizME.Services.QuizService
 
 		public Quiz LoadQuizFromFile(string path)
 		{
+			if (path == null) return null;
 			var json = File.ReadAllText(path);
 			var quiz = JsonConvert.DeserializeObject<Quiz>(json);
 			

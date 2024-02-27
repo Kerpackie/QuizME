@@ -1,11 +1,12 @@
 ﻿using System.Windows.Forms;
+using QuizME.Services.FormService;
 
-namespace QuizME.Services.FormService
+public interface IFormService
 {
-	public interface IFormService
-	{
-		void OpenForm<T>() where T : Form;
-		void OpenFormWithArgument<T, TArg>(TArg arg) where T : Form;
-		string OpenFile();
-	}
+	event FormOpenedHandler FormOpened;
+	event FormClosedHandler FormClosed;
+
+	void OpenForm<T>() where T : Form;
+	void OpenFormWithArgument<T, TArg>(TArg arg) where T : Form;
+	string OpenFile();
 }

@@ -184,6 +184,7 @@
         <Compile Include="Models\Quiz.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Services\FormService\FormEvents.cs" />
         <Compile Include="Services\FormService\FormService.cs" />
         <Compile Include="Services\FormService\IFormService.cs" />
         <Compile Include="Services\QuestionService\IQuestionService.cs" />

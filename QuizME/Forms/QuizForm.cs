@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using QuizME.Models;
 
 namespace QuizME.Forms
@@ -7,7 +8,15 @@ namespace QuizME.Forms
 	{
 		public QuizForm(Quiz quiz)
 		{
-			InitializeComponent();
+			try
+			{
+				InitializeComponent();
+				// Other initialization code...
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error initializing form: " + ex.Message);
+			}
 		}
 	}
 }
