@@ -3,11 +3,19 @@ using System.Net;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 using QuizME.Models;
+using QuizME.Services.QuestionService;
 
 namespace QuizME.Services.QuizService
 {
 	public class QuizService : IQuizService
 	{
+		private readonly IQuestionService _questionService;
+
+		public QuizService(IQuestionService questionService)
+		{
+			_questionService = questionService;
+		}
+
 		public Quiz CreateQuiz()
 		{
 			return new Quiz();

@@ -164,6 +164,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Extensions\FormExtensions.cs" />
         <Compile Include="Forms\QuizForm.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -182,8 +183,8 @@
         <Compile Include="Models\Questions\Open.cs" />
         <Compile Include="Models\Questions\TrueFalse.cs" />
         <Compile Include="Models\Quiz.cs" />
-        <Compile Include="Program.cs"/>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Services\FormService\FormEvents.cs" />
         <Compile Include="Services\FormService\FormService.cs" />
         <Compile Include="Services\FormService\IFormService.cs" />
@@ -191,6 +192,9 @@
         <Compile Include="Services\QuestionService\QuestionService.cs" />
         <Compile Include="Services\QuizService\IQuizService.cs" />
         <Compile Include="Services\QuizService\QuizService.cs" />
+        <EmbeddedResource Include="Forms\QuizForm.resx">
+          <DependentUpon>QuizForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="MainForm.resx">
           <DependentUpon>MainForm.cs</DependentUpon>
         </EmbeddedResource>
@@ -215,7 +219,10 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <None Include="App.config"/>
+        <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Forms\QuestionForms\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
