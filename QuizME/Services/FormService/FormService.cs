@@ -19,6 +19,11 @@ namespace QuizME.Services.FormService
 			form.Show();
 		}
 
+		public void OpenFormWithArgument<T, TArg>(TArg arg) where T : Form
+		{
+			var form = ActivatorUtilities.CreateInstance<T>(_serviceProvider, arg);
+		}
+
 		public string OpenFile()
 		{
 			using (var openFileDialog = new OpenFileDialog())

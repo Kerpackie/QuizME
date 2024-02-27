@@ -2,6 +2,6 @@
 {
 	public class TrueFalse : Question
 	{
-		public bool Answer { get; set; }
+		public string Answer { get; set; }
 	}
 }

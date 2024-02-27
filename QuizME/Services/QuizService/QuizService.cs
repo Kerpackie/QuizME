@@ -8,10 +8,13 @@ namespace QuizME.Services.QuizService
 {
 	public class QuizService : IQuizService
 	{
+		public Quiz CreateQuiz()
+		{
+			return new Quiz();
+		}
+
 		public Quiz CreateQuiz(string name, string description, string topic, int marks, string instructions)
 		{
-			// Create a new Quiz, using information passed from the form.
-			
 			var quiz = new Quiz
 			{
 				Name = name,
@@ -26,8 +29,6 @@ namespace QuizME.Services.QuizService
 
 		public Quiz UpdateQuiz(Quiz quiz, string name, string description, string topic, int marks, string instructions)
 		{
-			// Update the Quiz with the new information passed from the form.
-			
 			quiz.Name = name;
 			quiz.Description = description;
 			quiz.Topic = topic;
@@ -60,6 +61,11 @@ namespace QuizME.Services.QuizService
 		public void DeleteQuizFromFile(string path)
 		{
 			File.Delete(path);
+		}
+
+		public void AddQuestionToQuiz(Quiz quiz, Question question)
+		{
+			quiz.Questions.Add(question);
 		}
 	}
 }

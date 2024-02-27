@@ -31,9 +31,9 @@
 		{
 			this.lblMain = new System.Windows.Forms.Label();
 			this.gbMain = new System.Windows.Forms.GroupBox();
-			this.btnNewQuiz = new System.Windows.Forms.Button();
-			this.btnLoadQuiz = new System.Windows.Forms.Button();
 			this.btnExit = new System.Windows.Forms.Button();
+			this.btnLoadQuiz = new System.Windows.Forms.Button();
+			this.btnNewQuiz = new System.Windows.Forms.Button();
 			this.gbMain.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -58,14 +58,15 @@
 			this.gbMain.TabStop = false;
 			this.gbMain.Text = "Select an Option";
 			// 
-			// btnNewQuiz
+			// btnExit
 			// 
-			this.btnNewQuiz.Location = new System.Drawing.Point(20, 51);
-			this.btnNewQuiz.Name = "btnNewQuiz";
-			this.btnNewQuiz.Size = new System.Drawing.Size(150, 63);
-			this.btnNewQuiz.TabIndex = 0;
-			this.btnNewQuiz.Text = "New Quiz";
-			this.btnNewQuiz.UseVisualStyleBackColor = true;
+			this.btnExit.Location = new System.Drawing.Point(365, 51);
+			this.btnExit.Name = "btnExit";
+			this.btnExit.Size = new System.Drawing.Size(150, 63);
+			this.btnExit.TabIndex = 2;
+			this.btnExit.Text = "Exit";
+			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
 			// btnLoadQuiz
 			// 
@@ -75,24 +76,26 @@
 			this.btnLoadQuiz.TabIndex = 1;
 			this.btnLoadQuiz.Text = "Load Quiz";
 			this.btnLoadQuiz.UseVisualStyleBackColor = true;
+			this.btnLoadQuiz.Click += new System.EventHandler(this.btnLoadQuiz_Click);
 			// 
-			// btnExit
+			// btnNewQuiz
 			// 
-			this.btnExit.Location = new System.Drawing.Point(365, 51);
-			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(150, 63);
-			this.btnExit.TabIndex = 2;
-			this.btnExit.Text = "Exit";
-			this.btnExit.UseVisualStyleBackColor = true;
+			this.btnNewQuiz.Location = new System.Drawing.Point(20, 51);
+			this.btnNewQuiz.Name = "btnNewQuiz";
+			this.btnNewQuiz.Size = new System.Drawing.Size(150, 63);
+			this.btnNewQuiz.TabIndex = 0;
+			this.btnNewQuiz.Text = "New Quiz";
+			this.btnNewQuiz.UseVisualStyleBackColor = true;
+			this.btnNewQuiz.Click += new System.EventHandler(this.btnNewQuiz_Click);
 			// 
-			// Form1
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(633, 259);
 			this.Controls.Add(this.gbMain);
 			this.Controls.Add(this.lblMain);
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.Text = "Form1";
 			this.gbMain.ResumeLayout(false);
 			this.ResumeLayout(false);
