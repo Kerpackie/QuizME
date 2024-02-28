@@ -36,7 +36,7 @@ namespace QuizME.Forms.QuestionForms
 			this.lblText = new System.Windows.Forms.Label();
 			this.lblMarks = new System.Windows.Forms.Label();
 			this.tbText = new System.Windows.Forms.TextBox();
-			this.Cancel = new System.Windows.Forms.TextBox();
+			this.tbMarks = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// btnCancel
@@ -85,20 +85,20 @@ namespace QuizME.Forms.QuestionForms
 			this.tbText.Size = new System.Drawing.Size(552, 26);
 			this.tbText.TabIndex = 4;
 			// 
-			// Cancel
+			// tbMarks
 			// 
-			this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-			this.Cancel.Location = new System.Drawing.Point(551, 60);
-			this.Cancel.Name = "Cancel";
-			this.Cancel.Size = new System.Drawing.Size(114, 26);
-			this.Cancel.TabIndex = 5;
+			this.tbMarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+			this.tbMarks.Location = new System.Drawing.Point(551, 60);
+			this.tbMarks.Name = "tbMarks";
+			this.tbMarks.Size = new System.Drawing.Size(114, 26);
+			this.tbMarks.TabIndex = 5;
 			// 
 			// QuestionForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.Cancel);
+			this.Controls.Add(this.tbMarks);
 			this.Controls.Add(this.tbText);
 			this.Controls.Add(this.lblMarks);
 			this.Controls.Add(this.lblText);
@@ -114,8 +114,8 @@ namespace QuizME.Forms.QuestionForms
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Label lblText;
 		private System.Windows.Forms.Label lblMarks;
-		private System.Windows.Forms.TextBox tbText;
-		private System.Windows.Forms.TextBox Cancel;
+		public System.Windows.Forms.TextBox tbText;
+		public System.Windows.Forms.TextBox tbMarks;
 
 		#endregion
 	}

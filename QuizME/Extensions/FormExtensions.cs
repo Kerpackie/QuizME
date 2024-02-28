@@ -12,9 +12,14 @@ namespace QuizME.Extensions
 			       !string.IsNullOrWhiteSpace(tbText.Text);
 		}
 		
-		public static bool ValidateNumericFormInputs(this NumericalForm form, TextBox tbMarks, TextBox tbText, out int marks)
+		public static bool ValidateNumericFormInputs(this NumericalForm form, TextBox tbMarks, TextBox tbText, 
+			TextBox minX, TextBox maxX, TextBox minY, TextBox maxY, out int marks)
 		{
 			return ValidateInputs(tbMarks, tbText, out marks) &&
+			       int.TryParse(minX.Text, out _) &&
+			       int.TryParse(maxX.Text, out _) &&
+			       int.TryParse(minY.Text, out _) &&
+			       int.TryParse(maxY.Text, out _) &&
 			       !string.IsNullOrWhiteSpace(tbText.Text);
 		}
 		

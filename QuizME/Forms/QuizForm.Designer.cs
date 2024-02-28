@@ -46,6 +46,7 @@ namespace QuizME.Forms
 			this.lvQuestions = new System.Windows.Forms.ListView();
 			this.colHeadQuestion = new System.Windows.Forms.ColumnHeader();
 			this.colHeadType = new System.Windows.Forms.ColumnHeader();
+			this.btnNumerical = new System.Windows.Forms.Button();
 			this.gbQuizMain.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -184,12 +185,23 @@ namespace QuizME.Forms
 			this.colHeadType.Text = "Type";
 			this.colHeadType.Width = 100;
 			// 
+			// btnNumerical
+			// 
+			this.btnNumerical.Location = new System.Drawing.Point(516, 197);
+			this.btnNumerical.Name = "btnNumerical";
+			this.btnNumerical.Size = new System.Drawing.Size(129, 42);
+			this.btnNumerical.TabIndex = 4;
+			this.btnNumerical.Text = "Numerical";
+			this.btnNumerical.UseVisualStyleBackColor = true;
+			this.btnNumerical.Click += new System.EventHandler(this.btnNumerical_Click);
+			// 
 			// QuizForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(794, 564);
+			this.Controls.Add(this.btnNumerical);
 			this.Controls.Add(this.lvQuestions);
 			this.Controls.Add(this.btnTrueFalse);
 			this.Controls.Add(this.gbQuizMain);
@@ -200,6 +212,8 @@ namespace QuizME.Forms
 			this.gbQuizMain.PerformLayout();
 			this.ResumeLayout(false);
 		}
+
+		private System.Windows.Forms.Button btnNumerical;
 
 		private System.Windows.Forms.ColumnHeader colHeadType;
 		private System.Windows.Forms.ColumnHeader colHeadQuestion;
