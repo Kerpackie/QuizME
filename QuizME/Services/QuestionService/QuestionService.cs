@@ -31,7 +31,7 @@ namespace QuizME.Services.QuestionService
 			};
 		}
 
-		public Numerical CreateNumericalQuestion(int mark, int minX, int maxX, int minY, int maxY, string operation, string text)
+		public Numerical CreateNumericalQuestion(int mark, int minX, int maxX, int minY, int maxY, string operation)
 		{
 			
 			var x = _random.Next(minX, maxX + 1);

@@ -10,7 +10,7 @@ namespace QuizME.Services.QuestionService
 		Question CreateQuestion(string text, string answer);
 		
 		MultipleChoice CreateMultipleChoiceQuestion(int mark, string text, string answer, List<string> options);
-		Numerical CreateNumericalQuestion(int mark, int minX, int maxX, int minY, int maxY, string operation, string text);
+		Numerical CreateNumericalQuestion(int mark, int minX, int maxX, int minY, int maxY, string operation);
 		Open CreateOpenQuestion(int mark, string text, string notes);
 		TrueFalse CreateTrueFalseQuestion(int mark, string text, string answer);
 		
