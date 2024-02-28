@@ -42,9 +42,11 @@ namespace QuizME.Forms
 			this.lblTopic = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.lblModule = new System.Windows.Forms.Label();
-			this.dgvQuestions = new System.Windows.Forms.DataGridView();
+			this.btnTrueFalse = new System.Windows.Forms.Button();
+			this.lvQuestions = new System.Windows.Forms.ListView();
+			this.colHeadQuestion = new System.Windows.Forms.ColumnHeader();
+			this.colHeadType = new System.Windows.Forms.ColumnHeader();
 			this.gbQuizMain.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize) (this.dgvQuestions)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// gbQuizMain
@@ -81,7 +83,7 @@ namespace QuizME.Forms
 			this.lblInstructions.Name = "lblInstructions";
 			this.lblInstructions.Size = new System.Drawing.Size(103, 23);
 			this.lblInstructions.TabIndex = 8;
-			this.lblInstructions.Text = "Instructions:";
+			this.lblInstructions.Text = "Instructions";
 			// 
 			// textBox4
 			// 
@@ -151,17 +153,36 @@ namespace QuizME.Forms
 			this.lblModule.TabIndex = 0;
 			this.lblModule.Text = "Module:";
 			// 
-			// dgvQuestions
+			// btnTrueFalse
 			// 
-			this.dgvQuestions.AllowUserToAddRows = false;
-			this.dgvQuestions.AllowUserToDeleteRows = false;
-			this.dgvQuestions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvQuestions.Location = new System.Drawing.Point(24, 204);
-			this.dgvQuestions.Name = "dgvQuestions";
-			this.dgvQuestions.ReadOnly = true;
-			this.dgvQuestions.Size = new System.Drawing.Size(309, 324);
-			this.dgvQuestions.TabIndex = 1;
-			
+			this.btnTrueFalse.Location = new System.Drawing.Point(381, 197);
+			this.btnTrueFalse.Name = "btnTrueFalse";
+			this.btnTrueFalse.Size = new System.Drawing.Size(129, 42);
+			this.btnTrueFalse.TabIndex = 2;
+			this.btnTrueFalse.Text = "True False";
+			this.btnTrueFalse.UseVisualStyleBackColor = true;
+			this.btnTrueFalse.Click += new System.EventHandler(this.btnTrueFalse_Click);
+			// 
+			// lvQuestions
+			// 
+			this.lvQuestions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {this.colHeadQuestion, this.colHeadType});
+			this.lvQuestions.HideSelection = false;
+			this.lvQuestions.Location = new System.Drawing.Point(24, 196);
+			this.lvQuestions.Name = "lvQuestions";
+			this.lvQuestions.Size = new System.Drawing.Size(347, 357);
+			this.lvQuestions.TabIndex = 3;
+			this.lvQuestions.UseCompatibleStateImageBehavior = false;
+			this.lvQuestions.View = System.Windows.Forms.View.Details;
+			// 
+			// colHeadQuestion
+			// 
+			this.colHeadQuestion.Text = "Question:";
+			this.colHeadQuestion.Width = 243;
+			// 
+			// colHeadType
+			// 
+			this.colHeadType.Text = "Type";
+			this.colHeadType.Width = 100;
 			// 
 			// QuizForm
 			// 
@@ -169,18 +190,23 @@ namespace QuizME.Forms
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(794, 564);
-			this.Controls.Add(this.dgvQuestions);
+			this.Controls.Add(this.lvQuestions);
+			this.Controls.Add(this.btnTrueFalse);
 			this.Controls.Add(this.gbQuizMain);
+			this.Location = new System.Drawing.Point(15, 15);
 			this.MaximizeBox = false;
 			this.Name = "QuizForm";
-			this.Text = "QuizForm";
 			this.gbQuizMain.ResumeLayout(false);
 			this.gbQuizMain.PerformLayout();
-			((System.ComponentModel.ISupportInitialize) (this.dgvQuestions)).EndInit();
 			this.ResumeLayout(false);
 		}
 
-		private System.Windows.Forms.DataGridView dgvQuestions;
+		private System.Windows.Forms.ColumnHeader colHeadType;
+		private System.Windows.Forms.ColumnHeader colHeadQuestion;
+
+		private System.Windows.Forms.ListView lvQuestions;
+
+		private System.Windows.Forms.Button btnTrueFalse;
 
 		private System.Windows.Forms.RichTextBox rtbInstructions;
 

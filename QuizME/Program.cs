@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using QuizME.Forms.QuestionForms;
 using QuizME.Services.FormService;
 using QuizME.Services.QuestionService;
 using QuizME.Services.QuizService;
@@ -39,6 +40,7 @@ namespace QuizME
 					services.AddScoped<IQuizService, QuizService>();
 					services.AddTransient<IQuestionService, QuestionService>();
 					services.AddTransient<MainForm>();
+					services.AddTransient<TrueFalseForm>();
 				});
 		}
 	}

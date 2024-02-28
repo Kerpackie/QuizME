@@ -75,6 +75,7 @@ namespace QuizME.Services.QuizService
 		public void AddQuestionToQuiz(Quiz quiz, Question question)
 		{
 			quiz.Questions.Add(question);
+			quiz.OnQuestionAdded();
 		}
 	}
 }

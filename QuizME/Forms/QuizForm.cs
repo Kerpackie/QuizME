@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuizME.Forms.QuestionForms;
 using QuizME.Models;
 using QuizME.Services.QuestionService;
 using QuizME.Services.QuizService;
@@ -10,39 +11,39 @@ namespace QuizME.Forms
 	{
 		private readonly IQuizService _quizService;
 		private readonly Quiz _quiz;
-		public QuizForm(Quiz quiz, IQuizService quizService)
+		private readonly IFormService _formService;
+		public QuizForm(Quiz quiz, IQuizService quizService, IFormService formService)
 		{
 			_quiz = quiz;
+			_formService = formService;
 			try
 			{
 				_quizService = quizService;
 				InitializeComponent();
-				InitDataGridQuestions();
+				//SetupListView();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("Error initializing form: " + ex.Message);
 			}
+			_quiz.QuestionAdded += OnQuestionAdded;
+
 		}
 
-		private void InitDataGridQuestions()
+		private void OnQuestionAdded()
 		{
-			dgvQuestions.AutoGenerateColumns = false;
-			dgvQuestions.Columns.Add(new DataGridViewTextBoxColumn
+			lvQuestions.Items.Clear();
+			foreach (var question in _quiz.Questions)
 			{
-				DataPropertyName = "Type",
-				HeaderText = "Question Type",
-				Name = "QuestionType"
-			});
-			dgvQuestions.Columns.Add(new DataGridViewTextBoxColumn
-			{
-				DataPropertyName = "Text",
-				HeaderText = "Question Text",
-				Name = "QuestionText"
-			});
-			dgvQuestions.DataSource = _quiz.Questions;
-			dgvQuestions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+				var item = new ListViewItem(question.Text);
+				item.SubItems.Add(question.QuestionType);
+				lvQuestions.Items.Add(item);
+			}
 		}
-		
+
+		private void btnTrueFalse_Click(object sender, EventArgs e)
+		{
+			_formService.OpenFormWithArgument<TrueFalseForm, Quiz>(_quiz);
+		}
 	}
 }

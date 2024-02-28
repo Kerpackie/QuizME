@@ -5,14 +5,13 @@ namespace QuizME.Models.Questions
 	public class Numerical : Question
 	{
 		public int MinX { get; set; } = 0;
-		public int MaxX { get; set; }
+		public int MaxX { get; set; } = 11;
 		public int MinY { get; set; } = 0;
-		public int MaxY { get; set; }
+		public int MaxY { get; set; } = 11;
 		public int XVal { get; private set; }
 		public int YVal { get; private set; }
 		public string Operator { get; set; }
 
-		public int Answer { get; set; }
 
 		public Numerical(int mark, int x, int y, string operation, string text)
 		{
@@ -29,16 +28,16 @@ namespace QuizME.Models.Questions
 			switch (Operator)
 			{
 				case "+":
-					Answer = XVal + YVal;
+					Answer = (XVal + YVal).ToString();
 					break;
 				case "-":
-					Answer = XVal - YVal;
+					Answer = (XVal - YVal).ToString();
 					break;
 				case "*":
-					Answer = XVal * YVal;
+					Answer = (XVal * YVal).ToString();
 					break;
 				case "/":
-					Answer = XVal / YVal;
+					Answer = (XVal / YVal).ToString();
 					break;
 				default:
 					break;

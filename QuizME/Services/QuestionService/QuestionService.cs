@@ -54,10 +54,12 @@ namespace QuizME.Services.QuestionService
 
 		public TrueFalse CreateTrueFalseQuestion(int mark, string text, string answer)
 		{
+			var questionText = $"True or False: {text}";
+			
 			return new TrueFalse
 			{
 				Mark = mark,
-				Text = text,
+				Text = questionText,
 				Answer = answer
 			};
 		}

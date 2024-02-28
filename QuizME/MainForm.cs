@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuizME.Forms;
+using QuizME.Forms.QuestionForms;
 using QuizME.Models;
 using QuizME.Services.FormService;
 using QuizME.Services.QuizService;
@@ -46,7 +47,8 @@ namespace QuizME
 		
 		private void btnExit_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			//Application.Exit();
+			_formService.OpenForm<TrueFalseForm>();
 		}
 
 		private void btnLoadQuiz_Click(object sender, EventArgs e)
