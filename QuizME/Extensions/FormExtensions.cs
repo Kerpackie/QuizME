@@ -29,5 +29,12 @@ namespace QuizME.Extensions
 			return ValidateInputs(tbMarks, tbText, out marks) &&
 			       (rbTrue.Checked || rbFalse.Checked);
 		}
+		
+		public static bool ValidateOpenFormInputs(this OpenForm form, TextBox tbMarks, TextBox tbText, RichTextBox notes, 
+			out int marks)
+		{
+			return ValidateInputs(tbMarks, tbText, out marks) &&
+			       !string.IsNullOrWhiteSpace(notes.Text);
+		}
 	}
 }

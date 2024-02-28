@@ -171,6 +171,12 @@
         <Compile Include="Forms\QuestionForms\NumericalForm.Designer.cs">
           <DependentUpon>NumericalForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="Forms\QuestionForms\OpenForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\QuestionForms\OpenForm.Designer.cs">
+          <DependentUpon>OpenForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="Forms\QuestionForms\QuestionForm.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -222,6 +228,9 @@
         <Compile Include="Services\QuestionService\QuestionService.cs" />
         <Compile Include="Services\QuizService\IQuizService.cs" />
         <Compile Include="Services\QuizService\QuizService.cs" />
+        <EmbeddedResource Include="Forms\QuestionForms\OpenForm.resx">
+          <DependentUpon>OpenForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Forms\QuestionForms\QuestionForm.resx">
           <DependentUpon>QuestionForm.cs</DependentUpon>
         </EmbeddedResource>
