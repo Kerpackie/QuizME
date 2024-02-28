@@ -50,5 +50,10 @@ namespace QuizME.Forms
 		{
 			_formService.OpenFormWithArgument<NumericalForm, Quiz>(_quiz);
 		}
+
+		private void btnOpen_Click(object sender, EventArgs e)
+		{
+			_formService.OpenFormWithArgument<OpenForm, Quiz>(_quiz);
+		}
 	}
 }
