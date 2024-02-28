@@ -216,9 +216,6 @@
         <Compile Include="Services\QuestionService\QuestionService.cs" />
         <Compile Include="Services\QuizService\IQuizService.cs" />
         <Compile Include="Services\QuizService\QuizService.cs" />
-        <EmbeddedResource Include="Forms\QuestionForms\NumericalForm.resx">
-          <DependentUpon>NumericalForm.cs</DependentUpon>
-        </EmbeddedResource>
         <EmbeddedResource Include="Forms\QuestionForms\TrueFalseForm.resx">
           <DependentUpon>TrueFalseForm.cs</DependentUpon>
         </EmbeddedResource>
