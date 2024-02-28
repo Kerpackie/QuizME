@@ -14,14 +14,19 @@ namespace QuizME.Forms.QuestionForms
 		
 		protected Label lblText;
 		protected TextBox tbText;
-		/*protected Label lblAnswer;
-		protected TextBox tbAnswer;*/
 		protected Label lblMarks;
 		protected TextBox tbMarks;
 		protected Button btnCancel;
 		protected Button btnSave;
-
-		protected QuestionFormBase(IQuizService quizService, Quiz quiz, IQuestionService questionService)
+		
+		/*public QuestionFormBase(IQuizService quizService, Quiz quiz, IQuestionService questionService)
+		{
+			_quizService = quizService;
+			_quiz = quiz;
+			_questionService = questionService;
+			InitializeComponent();
+		}*/
+		public QuestionFormBase(IQuizService quizService, Quiz quiz, IQuestionService questionService)
 		{
 			_quizService = quizService;
 			_quiz = quiz;

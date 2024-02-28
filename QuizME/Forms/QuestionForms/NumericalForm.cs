@@ -8,14 +8,13 @@ using QuizME.Services.QuizService;
 
 namespace QuizME.Forms.QuestionForms
 {
-	public partial class NumericalForm : QuestionFormBase
+	public partial class NumericalForm : QuestionForm
 	{
 		private readonly IQuestionService _questionService;
 		private readonly IQuizService _quizService;
 		private readonly Quiz _quiz;
-		
 		public NumericalForm(IQuestionService questionService, IQuizService quizService, Quiz quiz) : 
-			base(quizService, quiz, questionService)
+			base(questionService, quizService, quiz)
 		{
 			_questionService = questionService;
 			_quizService = quizService;
@@ -23,7 +22,7 @@ namespace QuizME.Forms.QuestionForms
 			InitializeComponent();
 		}
 		
-		protected override void btnSave_Click(object sender, EventArgs e)
+		/*protected override void btnSave_Click(object sender, EventArgs e)
 		{
 			if (this.ValidateNumericFormInputs(tbMarks, tbText, out var marks))
 			{
@@ -36,7 +35,7 @@ namespace QuizME.Forms.QuestionForms
 			{
 				MessageBox.Show("Invalid inputs. Please check your inputs and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-		}
+		}*/
 
 		private Numerical CreateQuestion(int marks)
 		{

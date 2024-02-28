@@ -9,22 +9,32 @@ using QuizME.Services.QuizService;
 
 namespace QuizME.Forms.QuestionForms
 {
-	public partial class TrueFalseForm : QuestionFormBase
+	public partial class TrueFalseForm : QuestionForm
 	{
 		private readonly IQuestionService _questionService;
 		private readonly IQuizService _quizService;
 		private readonly Quiz _quiz;
-		
-		public TrueFalseForm(IQuizService quizService, Quiz quiz, IQuestionService questionService) : 
+
+		public TrueFalseForm(IQuestionService questionService, IQuizService quizService, Quiz quiz) : base(questionService, quizService, quiz)
+		{
+			_questionService = questionService;
+			_quizService = quizService;
+			_quiz = quiz;
+			
+			InitializeComponent();
+		}
+
+
+		/*public TrueFalseForm(IQuizService quizService, Quiz quiz, IQuestionService questionService) : 
 			base(quizService, quiz, questionService)
 		{
 			_quizService = quizService;
 			_quiz = quiz;
 			_questionService = questionService;
 			InitializeComponent();
-		}
+		}*/
 		
-		protected override void btnSave_Click(object sender, EventArgs e)
+		/*protected override void btnSave_Click(object sender, EventArgs e)
 		{
 			if (this.ValidateTrueFalseFormInputs(tbMarks, tbText, rbTrue, rbFalse, out var marks))
 			{
@@ -43,7 +53,7 @@ namespace QuizME.Forms.QuestionForms
 		{
 			var answer = gbTrueFalse.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)?.Text;
 			return _questionService.CreateTrueFalseQuestion(marks, tbText.Text, answer);
-		}
+		}*/
 		
 		
 	}
